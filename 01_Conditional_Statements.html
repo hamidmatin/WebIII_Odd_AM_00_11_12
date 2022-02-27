@@ -19,11 +19,10 @@
           //block of code to be executed if the condition is true
         }
       */
-let a= [1,2]
-a[3]=4545
-      var text;
-      // var hour = (new Date()).getHours();
-      var hour = Math.floor(Math.random() * 24);
+
+      let text;
+      // let hour = (new Date()).getHours();
+      let hour = Math.floor(Math.random() * 24);
 
       text = 'Good Evening';
       if (hour < 18) {
@@ -40,7 +39,7 @@ a[3]=4545
         }
       */
 
-      var greeting;
+      let greeting;
 
       // if (hour < 18) {
       //   greeting = 'Good Day';
@@ -58,7 +57,7 @@ a[3]=4545
       // else greeting = 'Good Evening';
 
       /*
-        ternary operator
+        ternary operator => ? : => operand ? operand : operand
 
         variable = condition ? value if cond is true : value if cond is false
 
@@ -68,9 +67,9 @@ a[3]=4545
 
       document.getElementById('p2').innerHTML = greeting;
 
-      // var day = (new Date()).getDay();
-      var day = 5;
-      var dayName;
+      // let day = (new Date()).getDay();
+      let day = 4;
+      let dayName;
 
       // if (day === 0) {
       //   dayName = 'Sunday';
@@ -125,23 +124,58 @@ a[3]=4545
       //     }
       //   }
       // }
+      
 
+      // if (day === 0) {
+      //   dayName = 'Sunday';
+      // }
+      // else 
+      //   if (day === 1) {
+      //     dayName = 'Monday';
+      //   }
+      //   else 
+      //     if (day === 2) {
+      //       dayName = 'Tuesday';
+      //     }
+      //     else 
+      //       if (day === 3) {
+      //         dayName = 'Wednsday';
+      //       }
+      //       else 
+      //         if (day === 4) {
+      //           dayName = 'Thursday';
+      //         }
+      //         else 
+      //           if (day === 5) {
+      //             dayName = 'Friday';
+      //           }
+      //           else {
+      //             dayName = 'Saturday';
+      //           }
+              
       if (day === 0) {
         dayName = 'Sunday';
-      } else if (day === 1) {
+      }
+      else if (day === 1) {
         dayName = 'Monday';
-      } else if (day === 2) {
+      }
+      else if (day === 2) {
         dayName = 'Tuesday';
-      } else if (day === 3) {
+      }
+      else if (day === 3) {
         dayName = 'Wednsday';
-      } else if (day === 4) {
+      }
+      else if (day === 4) {
         dayName = 'Thursday';
-      } else if (day === 5) {
+      }
+      else if (day === 5) {
         dayName = 'Friday';
-      } else {
+      }
+      else {
         dayName = 'Saturday';
       }
-
+              
+      
       document.getElementById('p3').innerHTML = dayName;
 
       /*
@@ -157,18 +191,20 @@ a[3]=4545
         }
       */
       switch (day) {
+        case 3:
+          dayName = 'Wednsday';
+          break;
         case 0:
           dayName = 'Sunday';
-          break;
-        default:
-          dayName = 'Saturday';
           break;
         case 1:
           dayName = 'Monday';
           break;
-        
-        case 3:
-          dayName = 'Wednsday';
+        case 2:
+          dayName = 'Tuesday';
+          break;
+        default:
+          dayName = 'Saturday';
           break;
         case 4:
           dayName = 'Thursday';
@@ -176,13 +212,11 @@ a[3]=4545
         case 5:
           dayName = 'Friday';
           break;
-        case 2:
-          dayName = 'Tuesday';
-          break;
+
       }
       document.getElementById('p4').innerHTML = dayName;
 
-      var weekStatus;
+      let weekStatus;
       switch (day) {
         case 4:
         case 5:
