@@ -24,6 +24,8 @@
           <li><a id="ajax-2" href="#">AJAX XMLHttp</a></li>
           <li><a id="ajax-3" href="#" class="active">Breakfast Menu (XML)</a></li>
           <li><a id="ajax-4" href="#">Breakfast Menu (object)</a></li>
+          <li><a id="ajax-5" href="#">Breakfast Menu (JSON)</a></li>
+          <li><a id="ajax-6" href="#">Get JSON from API</a></li>
         </ul>
       </aside>
       <main></main>
@@ -355,6 +357,42 @@
         console.log(foodList)
         showFoodList()
       } 
+    
+      document.getElementById('ajax-5').onclick = function(e) {
+        e.preventDefault();
+
+        changeActiveAsideLink(this);
+
+        /*****************/
+        const xhttp = new XMLHttpRequest();
+        xhttp.open('GET', '/data/breakfast_menu.json', true);
+        xhttp.send();
+
+        xhttp.onload = function () {
+          console.log(this.responseText)
+
+          foodList = JSON.parse(this.responseText)
+          console.log(foodList)
+
+          showFoodList()
+        }
+      }
+      document.getElementById('ajax-6').onclick = function(e) {
+        e.preventDefault();
+
+        changeActiveAsideLink(this);
+
+        /*****************/
+        const xhttp = new XMLHttpRequest();
+        xhttp.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
+        xhttp.send();
+
+        xhttp.onload = function () {
+          console.log(this.responseText)
+          console.log(JSON.parse(this.responseText))
+          
+        }
+      }
     </script>
   </body>
 </html>
